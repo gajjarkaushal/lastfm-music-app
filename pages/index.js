@@ -1,69 +1,72 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
+import { useState } from 'react';
+import Search from '../components/Search';
+import Link from 'next/link';
 
 export default function Home() {
+  const [tracks, setTracks] = useState([]);
+  const cleanTrackName = (name) => {
+    return name
+      .toLowerCase() // Convert to lowercase
+      .replace(/[^a-z0-9]/g, ''); // Remove special characters and spaces
+  };
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Music Library</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to Music App
         </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div className={styles.contentContainer}> {/* Use styled container */}
+          <section className={styles.searchContainer}>
+            <Search setTracks={setTracks} />
+          </section>
+          <section className={styles.trackListContainer}>
+            {tracks.length > 0 && (
+              <ul className={styles.trackList}>
+                {tracks.map((track) => {
+                  const cleanedTrackName = cleanTrackName(track.name);
+                  return (
+                    <li key={cleanedTrackName} className={styles.trackItem}>
+                      <Link href={`/track/${track.name}/${track.artist}`}>
+                        <img 
+                          src={track.image[2]['#text']} 
+                          alt={`${track.name} cover`} 
+                          className={styles.trackImage} 
+                        />
+                        <div className={styles.trackInfo}>
+                          <h2>{track.name}</h2>
+                          <p>by {track.artist}</p>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+              })}
+              </ul>
+            )}
+          </section>
         </div>
       </main>
 
-      <footer>
+      <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
+         Kaushal Gajjar
         </a>
       </footer>
 
       <style jsx>{`
         main {
           padding: 5rem 0;
-          flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -76,6 +79,7 @@ export default function Home() {
           display: flex;
           justify-content: center;
           align-items: center;
+          background-color: #f9f9f9; /* Match footer background with track item */
         }
         footer img {
           margin-left: 0.5rem;
@@ -87,21 +91,6 @@ export default function Home() {
           text-decoration: none;
           color: inherit;
         }
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
-        }
       `}</style>
 
       <style jsx global>{`
@@ -109,18 +98,8 @@ export default function Home() {
         body {
           padding: 0;
           margin: 0;
-          font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            Segoe UI,
-            Roboto,
-            Oxygen,
-            Ubuntu,
-            Cantarell,
-            Fira Sans,
-            Droid Sans,
-            Helvetica Neue,
-            sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+          background-color: #f0f0f0; /* Subtle background color for the entire page */
         }
         * {
           box-sizing: border-box;

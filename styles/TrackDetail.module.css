@@ -1,0 +1,262 @@
+/* styles/TrackDetail.module.css */
+
+.container {
+    max-width: 800px; /* Max width for the detail container */
+    margin: auto; /* Center the container */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.link {
+    color: #0070f3; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.artistInfo,
+.trackInfo,
+.tags,
+.wiki {
+    margin: 20px 0; /* Margin between sections */
+}
+
+.duration {
+    font-weight: bold; /* Bold font for duration */
+}
+
+.tags a {
+    margin-right: 10px; /* Space between tags */
+    color: #0070f3; /* Tag link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.tags a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.tagLink {
+    margin-right: 10px; /* Space between tags */
+    color: #0070f3; /* Tag link color */
+    text-decoration: none; /* Remove underline */
+}
+.backButton {
+    padding: 10px 15px; /* Padding inside the button */
+    margin-left: 10px; /* Space between input and button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #0070f3; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Transition for background color */
+}
+.backButton:hover {
+    background-color: #005bb5; /* Darken button on hover */
+}
+/* styles/TrackDetail.module.css */
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .artistInfo,
+  .trackInfo,
+  .tags,
+  .wiki,
+  .topAlbums,
+  .topTracks,
+  .relatedArtists {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .duration {
+    font-weight: bold;
+  }
+  
+  .tagLink {
+    margin-right: 10px;
+    color: #6c757d;
+  }
+  
+  .tagLink:hover {
+    text-decoration: underline;
+  }
+  
+  .backButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .backButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .topAlbums ul,
+  .topTracks ul,
+  .relatedArtists ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .albumItem,
+  .trackItem,
+  .relatedArtistItem {
+    margin: 10px 0;
+  }
+  
+  .albumLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .albumImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .albumDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trackLink {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .trackLink:hover {
+    text-decoration: underline;
+  }
+  
+  /* styles/TrackDetail.module.css */
+
+.topAlbums {
+    margin-top: 20px;
+  }
+  
+  .albumItem {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .albumLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .albumImage {
+    width: 100px; /* Adjust as necessary */
+    height: 100px; /* Adjust as necessary */
+    border-radius: 5px; /* Adds some rounding */
+    margin-right: 10px; /* Space between image and text */
+  }
+  
+  .albumDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .albumDetails span {
+    margin-top: 5px; /* Space between details */
+  }
+/* styles/TrackDetail.module.css */
+
+.topTracks {
+  margin-top: 20px;
+}
+
+.trackItem {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.trackLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.trackImage {
+  width: 50px; /* Adjust as necessary */
+  height: 50px; /* Adjust as necessary */
+  border-radius: 5px; /* Adds some rounding */
+  margin-right: 10px; /* Space between image and text */
+}
+
+.trackDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.trackDetails span {
+  margin-top: 5px; /* Space between details */
+}
+  /* styles/TrackDetail.module.css */
+
+.topTracks {
+    margin-top: 20px;
+  }
+  
+  .trackItem {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .trackLink {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .trackImage {
+    width: 50px; /* Adjust as necessary */
+    height: 50px; /* Adjust as necessary */
+    border-radius: 5px; /* Adds some rounding */
+    margin-right: 10px; /* Space between image and text */
+  }
+  
+  .trackDetails {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .trackDetails span {
+    margin-top: 5px; /* Space between details */
+  }
+  
