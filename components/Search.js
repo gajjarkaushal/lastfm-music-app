@@ -2,6 +2,13 @@
 import { useState } from 'react';
 import styles from '../styles/Search.module.css';
 
+/**
+ * A simple search form that fetches tracks from the Last.fm API and passes
+ * the results to the parent component via the setTracks callback.
+ *
+ * @param {function} setTracks - A callback function that takes an array of
+ *  track objects and sets the state of the parent component.
+ */
 const Search = ({ setTracks }) => {
     const [query, setQuery] = useState('');
 

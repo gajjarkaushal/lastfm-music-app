@@ -2,6 +2,12 @@
 
 import { getRelatedArtists } from '../../../lib/lastfm';
 
+/**
+ * Handles an API request to fetch related artists for a given artist.
+ * @param {http.IncomingMessage} req - The request object.
+ * @param {http.ServerResponse} res - The response object.
+ * @returns {Promise<void>} A promise that resolves when the request is fulfilled.
+ */
 export default async function handler(req, res) {
     const { artist } = req.query;
 

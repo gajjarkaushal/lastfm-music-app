@@ -4,6 +4,25 @@ import { useState } from 'react';
 import Search from '../components/Search';
 import Link from 'next/link';
 
+/**
+ * The homepage of the Music App, containing a search form and a list of
+ * tracks that have been searched for.
+ *
+ * The search form is a component that fetches tracks from the Last.fm API
+ * and passes the results to the parent component via the setTracks callback.
+ *
+ * The track list is rendered when there are tracks to display, and it shows
+ * each track as a link to the track detail page. The track name and artist
+ * are displayed, along with the cover art.
+ *
+ * The track detail page is linked to via a Next.js Link component, which
+ * provides client-side routing.
+ *
+ * The page also includes a footer with a link to the Vercel website and a
+ * message indicating that the app was built with Next.js.
+ *
+ * @returns {ReactElement} The rendered homepage.
+ */
 export default function Home() {
   const [tracks, setTracks] = useState([]);
   const cleanTrackName = (name) => {

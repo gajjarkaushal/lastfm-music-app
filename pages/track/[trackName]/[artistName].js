@@ -2,6 +2,17 @@
 import { useRouter } from 'next/router';
 import styles from '../../../styles/TrackDetail.module.css'; // Import CSS module for styling
 
+/**
+ * TrackDetail component renders a detailed view of a track, including its name, artist, 
+ * duration, listeners, play count, tags, and a brief summary. It also displays the top
+ * albums and tracks by the artist, as well as related artists.
+ * 
+ * @param {object} trackInfo - The track info object containing details about the track.
+ * @param {object[]} topAlbums - The top albums by the artist.
+ * @param {object[]} topTracks - The top tracks by the artist.
+ * @param {object[]} relatedArtists - The related artists to the artist.
+ * @returns {JSX.Element} The TrackDetail component.
+ */
 const TrackDetail = ({ trackInfo, topAlbums, topTracks, relatedArtists }) => {
   const router = useRouter();
   const { trackName, artistName } = router.query;
