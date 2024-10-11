@@ -1,0 +1,47 @@
+/* styles/Search.module.css */
+
+.searchForm {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the search form */
+}
+
+.searchInput {
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ddd; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    width: 300px; /* Fixed width */
+    transition: border 0.3s; /* Transition for border change */
+}
+
+.searchInput:focus {
+    outline: none; /* Remove default outline */
+    border-color: #0070f3; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 112, 243, 0.5); /* Add shadow on focus */
+}
+
+.searchButton {
+    padding: 10px 15px; /* Padding inside the button */
+    margin-left: 10px; /* Space between input and button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #0070f3; /* Button background color */
+    color: white; /* Button text color */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Transition for background color */
+}
+
+.searchButton:hover {
+    background-color: #005bb5; /* Darken button on hover */
+}
+.formcls {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the search form */
+}
+.searchinput{
+    height: 37px;
+    border-radius: 5px;
+}
